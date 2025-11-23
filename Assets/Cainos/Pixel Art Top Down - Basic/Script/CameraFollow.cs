@@ -29,5 +29,14 @@ namespace Cainos.PixelArtTopDown_Basic
             transform.position = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
         }
 
+        public void SetTarget(Transform newTarget)
+        {
+            target = newTarget;
+            if (target != null)
+            {
+                offset = transform.position - target.position;
+            }
+        }
+
     }
 }
